@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30621.155
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureLogsCleaner", "AzureLogsCleaner\AzureLogsCleaner.csproj", "{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBlobProxy", "AzureBlobProxy\AzureBlobProxy.csproj", "{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<!DOCTYPE html>
+
+<html>
+<head>
+      @await RenderSectionAsync("AddToHead")
+</head>
+<body>
+<div>
+      @await Html.PartialAsync("_Header.cshtml")
+      @RenderBody()
+      @await Html.PartialAsync("_Footer.cshtml")
+</div>
+</body>
+</html>
