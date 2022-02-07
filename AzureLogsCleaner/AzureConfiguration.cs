@@ -1,11 +1,10 @@
-﻿namespace AzureLogsCleaner
+﻿namespace AzureLogsCleaner;
+
+internal sealed record AzureConfiguration
 {
-    public class AzureConfiguration
-    {
-        public string Subscription { get; set; }
+    public string Subscription { get; set; }
 
-        public string Tenant { get; set; }
+    public string Tenant { get; set; }
 
-        public string AppId { get; set; }
-    }
+    public string AppId { get; set; }
 }
