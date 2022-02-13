@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: '[CI] Azure Utils'
 on: [push]
 jobs:
   Build-Utils:
