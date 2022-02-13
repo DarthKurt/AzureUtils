@@ -1,20 +1,19 @@
 using System;
-using AzureBlobProxy;
+using AzureUtils.AzureBlobProxy.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Configuration.AddUserSecrets<Program>(true);
+builder.ConfigureApplication();
 
-builder.Services.AddMvc().AddRazorRuntimeCompilation();
 builder.Services
-    .AddEndpointsApiExplorer()
-    .AddSwaggerGen()
-    .AddSingleton<IActionResultExecutor<BlobStorageResult>, BlobStorageResultExecutor>();
+    .AddMvc()
+    .AddRazorRuntimeCompilation();
 
 var connection = builder.Configuration.GetConnectionString("Blobs");
 
@@ -25,13 +24,25 @@ builder.Services
     .AddAzureClients(azureClientFactoryBuilder =>
         azureClientFactoryBuilder.AddBlobServiceClient(connection));
 
+builder.Services
+    .AddHealthChecks()
+    .AddAzureBlobStorage(connection);
+
 var app = builder.Build();
 
-app.UseSwagger()
+app
+    .UseStatusCodePages()
+    .UseHealthChecks("/health")
+    .UseSwagger()
     .UseSwaggerUI()
-    .UseHttpsRedirection()
-    .UseAuthorization();
+    .UseForwardedHeaders();
 
+app.AddOidcAuthentication();
 app.MapControllers();
 
-app.Run();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHsts();
+}
+
+await app.RunAsync();

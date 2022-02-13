@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <AssemblyName>AzureUtils.AzureBlobProxy</AssemblyName>
+        <RootNamespace>AzureUtils.AzureBlobProxy</RootNamespace>
+        <Description>Site to view blobs as files.</Description>
+        <IsPackable>false</IsPackable>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>CS8600;CS8602;CS8603;CS8620</WarningsAsErrors>
+        <UserSecretsId>AzureUtils.AzureBlobProxy</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.AzureStorage" Version="6.0.1" />
+        <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
+        <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+        <PackageReference Include="Microsoft.Extensions.Azure" Version="1.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+    </ItemGroup>
+
+</Project>

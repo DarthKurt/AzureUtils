@@ -5,7 +5,26 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureLogsCleaner", "AzureLogsCleaner\AzureLogsCleaner.csproj", "{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBlobProxy", "AzureBlobProxy\AzureBlobProxy.csproj", "{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2373222C-3554-4B7C-AA0A-C529A8422198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureBlobProxy", "AzureBlobProxy", "{D897A7E4-9E1E-4814-8858-8A116022B3F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{763C7CEE-E6CF-437F-BE4C-58A8CE1FF25C}"
+	ProjectSection(SolutionItems) = preProject
+		AzureBlobProxy\.gitignore = AzureBlobProxy\.gitignore
+		AzureBlobProxy\README.md = AzureBlobProxy\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureUtils.AzureBlobProxy", "AzureUtils.AzureBlobProxy", "{D4FDF035-3F97-462E-B6C9-25CB9E63F4E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureUtils.AzureBlobProxy", "AzureBlobProxy\AzureUtils.AzureBlobProxy\AzureUtils.AzureBlobProxy.csproj", "{30614D02-54BA-4E68-BFC2-9338EAF5C467}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{D1936E53-2C28-4B55-8FC4-10450F470D6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{19C14DCB-4C0C-417D-B45F-FCD848C4B288}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\github-actions.yml = .github\workflows\github-actions.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +36,19 @@ Global
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABC5AA22-3030-44B8-B7C4-B96F0B3091A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75A2ABAA-5B60-4E8D-8BFB-8813FA44D5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30614D02-54BA-4E68-BFC2-9338EAF5C467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30614D02-54BA-4E68-BFC2-9338EAF5C467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30614D02-54BA-4E68-BFC2-9338EAF5C467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30614D02-54BA-4E68-BFC2-9338EAF5C467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{763C7CEE-E6CF-437F-BE4C-58A8CE1FF25C} = {D897A7E4-9E1E-4814-8858-8A116022B3F3}
+		{D4FDF035-3F97-462E-B6C9-25CB9E63F4E5} = {D897A7E4-9E1E-4814-8858-8A116022B3F3}
+		{30614D02-54BA-4E68-BFC2-9338EAF5C467} = {D4FDF035-3F97-462E-B6C9-25CB9E63F4E5}
+		{19C14DCB-4C0C-417D-B45F-FCD848C4B288} = {D1936E53-2C28-4B55-8FC4-10450F470D6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82FD3A36-50C0-48A8-B3E3-5BC6B03A3F08}

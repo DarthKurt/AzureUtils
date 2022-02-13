@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AzureBlobProxy;
+namespace AzureUtils.AzureBlobProxy;
 
 /// <summary>
 /// Represents an <see cref="ActionResult"/> that when executed

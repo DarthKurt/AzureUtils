@@ -2,7 +2,7 @@
 using System.Globalization;
 using Azure.Storage.Blobs.Models;
 
-namespace AzureBlobProxy;
+namespace AzureUtils.AzureBlobProxy.Extensions;
 
 public static class BlobItemExtensions
 {

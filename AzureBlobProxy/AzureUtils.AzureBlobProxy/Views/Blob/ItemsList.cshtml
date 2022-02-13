@@ -1,0 +1,30 @@
+﻿@using AzureUtils.AzureBlobProxy.Extensions
+@model AzureUtils.AzureBlobProxy.Models.BlobContainerView
+
+@foreach (var blobItem in Model.Folders)
+{
+    <li>
+        <i class="bi bi-folder"></i>
+        <a asp-controller="Blob"
+           asp-action="ContainerView"
+           asp-route-container="@Model.Container"
+           asp-route-path="@(string.IsNullOrWhiteSpace(Model.Path) ? blobItem : $"{Model.Path}/{blobItem}")">
+            @blobItem
+        </a>
+    </li>
+}
+@foreach (var blobItem in Model.Files)
+{
+    var fileName = blobItem.FileName(Model.Path);
+    <li>
+        <i class="bi bi-file-earmark"></i>
+        <a asp-controller="File"
+           asp-action="File"
+           asp-route-container="@Model.Container"
+           asp-route-path="@blobItem.Name"
+           download="@fileName">
+            @fileName
+            <span>- @blobItem.FileSizeInKb() | @blobItem.UpdatedTime()</span>
+        </a>
+    </li>
+}

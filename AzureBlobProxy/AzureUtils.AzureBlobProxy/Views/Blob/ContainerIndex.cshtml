@@ -1,8 +1,8 @@
-﻿@model AzureBlobProxy.BlobIndexModel
+﻿@model AzureUtils.AzureBlobProxy.Models.BlobContainerRoot
 
 @{
     ViewBag.Title = "Main Report";
-    Layout = "~/Pages/_Layout.cshtml";
+    Layout = "~/Views/_Layout.cshtml";
 }
 
 @section AddToHead {
@@ -88,31 +88,18 @@
     </style>
 }
 
-@if (Model != null)
-{
-    <div class="tree">
-        <ul>
-            @if (!string.IsNullOrWhiteSpace(Model.Path))
-            {
-                var pathSegments = Model.Path.Split("/");
-
-                <li>
-                    <i class="bi bi-folder2-open"></i>
-                    <a asp-controller="BlobProxy"
-                       asp-action="Index"
-                       asp-route-container="@Model.Container"
-                       asp-route-path="@(string.Join("/", pathSegments.Take(pathSegments.Length - 1)))">
-                        [parent directory]
-                    </a>
-                    <ul class="folder">
-                        @{ await Html.RenderPartialAsync("ItemsList.cshtml", Model); }
-                    </ul>
-                </li>
-            }
-            else
-            {
-                await Html.RenderPartialAsync("ItemsList.cshtml", Model);
-            }
-        </ul>
-    </div>
-}
+<div class="tree">
+    <ul>
+        @foreach (var blobItem in Model.Folders)
+        {
+            <li>
+                <i class="bi bi-folder"></i>
+                <a asp-controller="Blob"
+                   asp-action="ContainerView"
+                   asp-route-container="@blobItem">
+                    @blobItem
+                </a>
+            </li>
+        }
+    </ul>
+</div>

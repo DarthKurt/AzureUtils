@@ -1,0 +1,13 @@
+name: '[CI] Azure Utils'
+on: [push]
+jobs:
+  Build-Utils:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the AzureBlobProxy image
+      run: >-
+        docker build
+        ./AzureBlobProxy/AzureUtils.AzureBlobProxy
+        --file ./AzureBlobProxy/AzureUtils.AzureBlobProxy/Dockerfile
+        --tag azure-utils/azure-blob-proxy:$(date +%s)

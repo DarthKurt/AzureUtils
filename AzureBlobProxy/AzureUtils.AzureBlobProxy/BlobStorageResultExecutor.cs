@@ -4,13 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using Azure;
 using Azure.Storage.Blobs.Specialized;
+using AzureUtils.AzureBlobProxy.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
 
-namespace AzureBlobProxy;
+namespace AzureUtils.AzureBlobProxy;
 
 internal sealed class BlobStorageResultExecutor : FileResultExecutorBase, IActionResultExecutor<BlobStorageResult>
 {
